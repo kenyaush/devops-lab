@@ -1,0 +1,30 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Pull Code') {
+            steps {
+                git branch: 'main', url: 'https://github.com/<your-username>/devops-lab.git'
+            }
+        }
+
+        stage('Build') {
+            steps {
+                echo 'Building the application...'
+            }
+        }
+
+        stage('Test') {
+            steps {
+                echo 'Running tests...'
+            }
+        }
+
+        stage('Deploy') {
+            steps {
+                echo 'Deploying to Windows web directory...'
+                bat 'copy index.html C:\\inetpub\\wwwroot\\'
+            }
+        }
+    }
+}
