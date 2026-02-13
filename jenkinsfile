@@ -22,9 +22,10 @@ pipeline {
 
         stage('Deploy') {
             steps {
-                echo 'Deploying to Windows web directory...'
-                bat 'copy index.html C:\\inetpub\\wwwroot\\'
+                echo 'Deploying to Windows folder...'
+                bat 'copy index.html "C:\\Users\\usher\\Desktop\\Junk\\Tech Materials\\Python Projects\\devops_lab\\" /Y'
             }
         }
     }
 }
+
